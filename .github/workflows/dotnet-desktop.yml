@@ -90,7 +90,7 @@ jobs:
         .\snyk.exe -v
         .\snyk auth ${{secrets.SNYK_AUTH}}
 
-    - name: Run Snyk Open Source
+    - name: Run Snyk Open Source (SCA)
       run: |
         .\snyk.exe test
         .\snyk.exe monitor
