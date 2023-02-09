@@ -88,6 +88,8 @@ jobs:
       run: |
         curl "https://static.snyk.io/cli/latest/snyk-win.exe" -o snyk.exe
         .\snyk.exe -v
+        .\snyk.exe test
+        .\snyk.exe monitor
     
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
