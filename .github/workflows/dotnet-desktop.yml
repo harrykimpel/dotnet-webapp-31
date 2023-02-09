@@ -86,7 +86,7 @@ jobs:
 
     - name: install snyk
       run: |
-        curl -Lo ./snyk.exe "https://static.snyk.io/cli/latest/snyk-win.exe"
+        curl "https://static.snyk.io/cli/latest/snyk-win.exe" -o snyk.exe
         snyk.exe -v
     
     # Restore the application to populate the obj folder with RuntimeIdentifiers
