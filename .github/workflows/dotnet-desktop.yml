@@ -84,11 +84,14 @@ jobs:
     - name: Execute unit tests
       run: dotnet restore
 
-    - name: install snyk
+    - name: Install & configure Snyk
       run: |
         curl "https://static.snyk.io/cli/latest/snyk-win.exe" -o snyk.exe
         .\snyk.exe -v
         .\snyk auth ${{secrets.SNYK_AUTH}}
+
+    - name: Run Snyk Open Source
+      run: |
         .\snyk.exe test
         .\snyk.exe monitor
     
